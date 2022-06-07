@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mysql:
+    image: "mysql"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "baderbadrouch15"
+      MYSQL_USER: "badreddine"
+      MYSQL_PASSWORD: "baderbadrouch15"
+      MYSQL_DATABASE: "node_db"
+
+  redis:
+    image: "redis"
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis/data:/data
+      - ./redis.conf:/etc/redis  
